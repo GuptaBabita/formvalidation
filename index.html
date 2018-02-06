@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For validation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+  .form-cont {
+    max-width:400px;
+    margin-top: 30px;
+  }
+  .alert {
+    display: none;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+    <form class="form-cont">
+        <div class="form-group">
+            <label for="email">Name:</label>
+            <input type="text" name="name" class="form-control">
+        </div>
+        <div class="alert alert-danger">
+          <strong>Error!</strong> Please enter the name.
+        </div>
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" name="email"  id="email" class="form-control">
+        </div>
+        <div class="alert alert-danger">
+          <strong>Error!</strong> Please enter the correct email.
+        </div>
+        <div class="form-group">
+            <label for="phonel">Phone:</label>
+            <input type="text" name="phone" class="form-control">
+        </div>
+        <div class="alert alert-danger">
+          <strong>Error!</strong> Please enter the 10 digit number phone.
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" name="password" class="form-control">
+        </div>
+        <div class="alert alert-danger">
+          <strong>Error!</strong> password should contain atleast one number and one special character.
+        </div>
+        <button type="submit" class="btn btn-default" id="submitButton">Submit</button>
+    </form>
+</div>
+<table id="table" class="table">
+
+</table>
+<script src="validation.js"></script>
+</body>
+</html>
