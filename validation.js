@@ -75,15 +75,66 @@ var errors = row[index].getElementsByClassName('alert');
 
  if(mydata[index].name == "" ){
 
-   errors[index].style.display = "block";
-   console.log(errors[index]);
+   errors[0].style.display = "block";
+   console.log(errors[0]);
    valid = false;
 
  }
  else {
-     errors[index].style.display = "none";
+     errors[0].style.display = "none";
 
  }
-render();
 
+ if(valid){
+     render();
+ }
+
+
+ if(mydata[index].email == "" ){
+
+   errors[1].style.display = "block";
+   console.log(errors[1]);
+   valid = false;
+
+ }
+ else {
+     errors[1].style.display = "none";
+
+ }
+
+ if(valid){
+     render();
+ }
+
+ if(mydata[index].phone == "" ){
+
+   errors[2].style.display = "block";
+   console.log(errors[2]);
+   valid = false;
+
+ }
+ else {
+     errors[2].style.display = "none";
+
+ }
+
+ if(valid){
+     render();
+ }
+
+ if(mydata[index].password == "" ){
+
+   errors[3].style.display = "block";
+   console.log(errors[3]);
+   valid = false;
+
+ }
+ else {
+     errors[3].style.display = "none";
+
+ }
+
+ if(valid){
+     render();
+ }
 }
