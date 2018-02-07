@@ -72,7 +72,7 @@ var tablecel = row[index].getElementsByTagName('td');
  mydata[index].password = tablecel[3].getElementsByTagName('input')[0].value;
 var errors = row[index].getElementsByClassName('alert');
 //console.log(errors);
-
+var valid = true;
  if(mydata[index].name == "" ){
 
    errors[0].style.display = "block";
@@ -83,10 +83,6 @@ var errors = row[index].getElementsByClassName('alert');
  else {
      errors[0].style.display = "none";
 
- }
-
- if(valid){
-     render();
  }
 
 
@@ -102,9 +98,6 @@ var errors = row[index].getElementsByClassName('alert');
 
  }
 
- if(valid){
-     render();
- }
 
  if(mydata[index].phone == "" ){
 
@@ -118,9 +111,6 @@ var errors = row[index].getElementsByClassName('alert');
 
  }
 
- if(valid){
-     render();
- }
 
  if(mydata[index].password == "" ){
 
