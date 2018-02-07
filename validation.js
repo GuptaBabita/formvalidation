@@ -1,6 +1,11 @@
+var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+var regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+var minNumberofChars = 6;
+  var maxNumberofChars = 16;
+  var regularExpression  = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+  var namereg =/^([a-zA-Z0-9_\.\-])+$/;
 
 var button = document.getElementById('submitButton');
-
 var mydata = [];
 button.onclick = function(e) {
 e.preventDefault();
@@ -16,6 +21,31 @@ var valid = true;
         valid = false;
 
       }
+
+      if(!namereg.test(inputs[i].value) && (inputs[i].name)  == "name") {
+    errors[0].style.display = "block";
+        valid = false;
+    }
+
+      if (!filter.test(email.value)) {
+        errors[1].style.display = "block";
+        valid = false;
+      }
+      if (regex.test(inputs[2].value) == false){
+          errors[2].style.display = "block";
+            valid = false;
+        }
+
+     if(inputs[3].value.length < minNumberofChars || inputs[3].value.length > maxNumberofChars){
+                  errors[3].style.display = "block";
+                    valid = false;
+             }
+
+             if(!regularExpression.test(inputs[3].value)) {
+                      errors[3].style.display = "block";
+                        valid = false;
+                 }
+
     else {
           errors[i].style.display = "none";
         console.log(inputs[i].value);
@@ -87,12 +117,18 @@ var valid = true;
 
 
  if(mydata[index].email == "" ){
-
-   errors[1].style.display = "block";
+  errors[1].style.display = "block";
    console.log(errors[1]);
    valid = false;
+}
 
+ if (!filter.test(mydata[index].email)) {
+   errors[1].style.display = "block";
+   valid = false;
  }
+
+
+
  else {
      errors[1].style.display = "none";
 
@@ -102,11 +138,16 @@ var valid = true;
  if(mydata[index].phone == "" ){
 
    errors[2].style.display = "block";
-   console.log(errors[2]);
-   valid = false;
+  valid = false;
 
  }
- else {
+
+ if (regex.test(mydata[index].phone) == false){
+     errors[2].style.display = "block";
+       valid = false;
+   }
+
+else {
      errors[2].style.display = "none";
 
  }
@@ -115,10 +156,18 @@ var valid = true;
  if(mydata[index].password == "" ){
 
    errors[3].style.display = "block";
-   console.log(errors[3]);
-   valid = false;
+  valid = false;
 
  }
+ if(mydata[index].password < minNumberofChars || mydata[index].password > maxNumberofChars){
+              errors[3].style.display = "block";
+                valid = false;
+         }
+
+         if(!regularExpression.test(mydata[index].password)) {
+                  errors[3].style.display = "block";
+                    valid = false;
+             }
  else {
      errors[3].style.display = "none";
 
